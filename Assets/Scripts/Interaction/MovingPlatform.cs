@@ -22,6 +22,8 @@ public class MovingPlatform : MonoBehaviour
         if (_isMoving) return;
         _isMoving = true;
 
+        //можно заменить одной стррочкой
+        //MoveToPos(_currentPos == _pos1 ? _pos2 : _pos1);
         if (_currentPos == _pos1)
         {
             MoveToPos(_pos2);
@@ -47,6 +49,7 @@ public class MovingPlatform : MonoBehaviour
         transform
             .DOMove(targetPos.position, duration)
             .SetEase(_ease)
+            //.SetSpeedBased(true) //у дотвин есть внутрянняя перегрузка, шаманить самом с duration не нужно
             .OnComplete(OnComplete);
     }
 
@@ -58,7 +61,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.gameObject.transform.SetParent(gameObject.transform);
-        PlayerController.speed = 2.5f;
+        PlayerController.speed = 2.5f;//магические числа, статика
     }
     
     public void OnTriggerExit(Collider other)

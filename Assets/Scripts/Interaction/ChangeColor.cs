@@ -2,50 +2,51 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
-    // Чтобы изменить Прозрачность, изменить Rendering mode на материале
-    // Transparent - с бликами, Fade - без!!!
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Rendering mode пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    // Transparent - пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, Fade - пїЅпїЅпїЅ!!!
     private Color color;
     /*
-    private void OnMouseDrag()  // Нажал и продолжает удерживать кнопку мыши
+    private void OnMouseDrag()  // пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     { 
         GetComponent<Renderer>().material.color = Color.gray;
     }
     
-    private void OnMouseEnter() //Вызывается при наведении мыши на коллайдер
+    private void OnMouseEnter() //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         GetComponent<Renderer>().material.color = Color.black;    
     }
         
-    private void OnMouseExit()  // Когда и вышла из коллайдера
+    private void OnMouseExit()  // пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         GetComponent<Renderer>().material.color = Color.blue;
     }
 
-    private void OnMouseUp()    // Мышь отжалась
+    private void OnMouseUp()    // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         GetComponent<Renderer>().material.color = Color.magenta;
     }
     */
-    private void OnMouseOver()  // Когда мышь на коллайдере
+    private void OnMouseOver()  // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         GetComponent<Renderer>().material.color = Color.green;
     }
     
             
-    private void OnMouseUpAsButton()    // Вызывается если отжалась на том же объекте что и нажалась
+    private void OnMouseUpAsButton()    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         GetComponent<Renderer>().material.color = Color.yellow;
     }
     
-    private void OnMouseDown()  // Мышь нажалась
+    //РЅРµРёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РєРѕРґ СѓРґР°Р»СЏС‚СЊ, РЅРµ РєРѕРјРјРµРЅС‚РёСЂРѕРІР°С‚СЊ
+    private void OnMouseDown()  // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
-        // Можно выбрать цвет ENUM
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ ENUM
         //GetComponent<Renderer>().material.color = Color.gray;
 
-        // Чтобы узнать цвет в юнити поставить RGB, потом посмотреть в процентах
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ RGB, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         //GetComponent<Renderer>().material.color = new Color(1, 0.498f, 0.3137f, 0.1f);
 
-        // Изменение цвета через Шестнадцетеричный код, но без альфы
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         if (ColorUtility.TryParseHtmlString("#257435", out color))
         { GetComponent<Renderer>().material.color = color; }
     }

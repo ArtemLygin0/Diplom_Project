@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//РќР°Р·РІР°РЅРёРµ РЅРµ РїРѕ РєРѕРЅРІРµРЅС†РёРё, РќРёР¶РЅРёРµ РїРѕРґС‡РµСЂРєРёРІР°РЅРёРµ Р»РёС€РЅРёРё
 public class F_2_ollowBullet : MonoBehaviour
 {
-    // Смотрит на объект и поворачивается
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public GameObject target;
     public float speed;
     void Update()
