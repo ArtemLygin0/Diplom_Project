@@ -6,10 +6,10 @@ public sealed class PlayerController : MonoBehaviour
     private DieClass _dieClass;
     private CloudSkill _cloudSkill;
 
-    [Header("����������� ���������")]
+    [Header("����������� ���������")]
     [SerializeField] public int lives = 5;
     [SerializeField] private float runSpeed = 9f;
-    public static float speed = 6f;
+    public static float speed = 6f; //статика, плохая практика, делает сильную связанность и спагетти стайл
     public static float jumpForce = 300f;
 
     public bool isGrounded;
@@ -36,37 +36,40 @@ public sealed class PlayerController : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                if (Input.GetKey(KeyCode.LeftShift))
-                    transform.localPosition += transform.forward * runSpeed * Time.deltaTime;
-                else
-                    transform.localPosition += transform.forward * speed * Time.deltaTime;
-            }
-
-            if (Input.GetKey(KeyCode.A))
-            {
-                if (Input.GetKey(KeyCode.LeftShift))
-                    transform.localPosition += -transform.right * runSpeed * Time.deltaTime;
-                else
-                    transform.localPosition += -transform.right * speed * Time.deltaTime;
-            }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                if (Input.GetKey(KeyCode.LeftShift))
-                    transform.localPosition += -transform.forward * runSpeed * Time.deltaTime;
-                else
-                    transform.localPosition += -transform.forward * speed * Time.deltaTime;
-            }
-
-            if (Input.GetKey(KeyCode.D))
-            {
-                if (Input.GetKey(KeyCode.LeftShift))
-                    transform.localPosition += transform.right * runSpeed * Time.deltaTime;
-                else
-                    transform.localPosition += transform.right * speed * Time.deltaTime;
-            }
+            //Много дубликата кода, делается в одну строчку
+            transform.position = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"))
+                                 * ((Input.GetKey(KeyCode.LeftShift) ? runSpeed : speed) * Time.deltaTime);
+            // if (Input.GetKey(KeyCode.W))
+            // {
+            //     if (Input.GetKey(KeyCode.LeftShift))
+            //         transform.localPosition += transform.forward * runSpeed * Time.deltaTime;
+            //     else
+            //         transform.localPosition += transform.forward * speed * Time.deltaTime;
+            // }
+            //
+            // if (Input.GetKey(KeyCode.A))
+            // {
+            //     if (Input.GetKey(KeyCode.LeftShift))
+            //         transform.localPosition += -transform.right * runSpeed * Time.deltaTime;
+            //     else
+            //         transform.localPosition += -transform.right * speed * Time.deltaTime;
+            // }
+            //
+            // if (Input.GetKey(KeyCode.S))
+            // {
+            //     if (Input.GetKey(KeyCode.LeftShift))
+            //         transform.localPosition += -transform.forward * runSpeed * Time.deltaTime;
+            //     else
+            //         transform.localPosition += -transform.forward * speed * Time.deltaTime;
+            // }
+            //
+            // if (Input.GetKey(KeyCode.D))
+            // {
+            //     if (Input.GetKey(KeyCode.LeftShift))
+            //         transform.localPosition += transform.right * runSpeed * Time.deltaTime;
+            //     else
+            //         transform.localPosition += transform.right * speed * Time.deltaTime;
+            // }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -82,7 +85,7 @@ public sealed class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 _cloudSkill.ConditionCloud();
-                // ������� ���-�� �������
+                // ������� ���-�� �������
             }
         }
     }

@@ -6,7 +6,7 @@ public class DropBox : MonoBehaviour
     float randomNumber;
     private void OnMouseDown()
     {
-        randomNumber = Random.Range(0, 5);
+        randomNumber = Random.Range(0, 5);//Магические числа
         while (randomNumber >= 0)
         {
             GameObject Item = Instantiate(item, transform.position, Quaternion.identity);

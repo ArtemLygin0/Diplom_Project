@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Подбор монеты, присваивается на каждую монету
+// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 public class CollectCoin : MonoBehaviour
 {
     [SerializeField] private LevelUI _levelUI;
@@ -23,17 +23,17 @@ public class CollectCoin : MonoBehaviour
     }
 
     /// <summary>
-    /// Собирает монету на уровне и сохраняет в <Баланс>
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ <пїЅпїЅпїЅпїЅпїЅпїЅ>
     /// </summary>
     /// <param name="currentLevel"></param>
     /// <param name="numberOfCoin"></param>
     public void GetCoinFromLevel(int currentLevel, int numberOfCoin)
     { 
-        if (GameInfo.savedCoins[currentLevel, numberOfCoin] == true) return;    // Если монета собрана (показать другой префаб монеты), (не прибавлять к балансу)
+        if (GameInfo.savedCoins[currentLevel, numberOfCoin] == true) return;    // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ), (пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
         GameInfo.savedCoins[currentLevel, numberOfCoin] = true;
 
         _levelUI.coins++;
-        _levelUI._coinText.text = "Coins : " + _levelUI.coins;
+        _levelUI._coinText.text = "Coins : " + _levelUI.coins;//Р»СѓС‡С€Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РёРЅС‚РµСЂРїРѕР»СЏС†РёСЋ
         BalanceOfCoins.balance++;  
     }
 }
